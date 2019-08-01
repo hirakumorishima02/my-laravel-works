@@ -1,0 +1,34 @@
+h1{
+    font-size: 100px;
+    margin-bottom: 15px;
+}
+/*ヘッダーのHomeの右にスペースを空けた*/
+.nav > a {
+    margin-right: 20px;
+}
+/*ヘッダーのアプリ名の右にスペースを空けた*/
+.nav-span > a{
+    margin-right: 20px;
+}
+/*Productページのタイトルのスタイルを消した*/
+.product > a {
+    text-decoration:none;
+}
+/*fontawesomeへのスタイル*/
+i {
+    margin-right: 20px;
+}
+/*aの色指定*/
+a:link { color: #2c3e50; }
+a:visited { color: #2c3e50; }
+a:hover { color: #FFF0F5; }
+/*Home画面のアイコンの上にマージン*/
+.icons{
+    margin-top: 100px;
+}
+
+img{
+    width: 80%;
+    border-radius: 5px;
+    border: solid 1px #FFF0F5;
+}
