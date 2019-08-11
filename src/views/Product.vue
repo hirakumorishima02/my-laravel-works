@@ -1,14 +1,17 @@
 <template>
     <div class="product" v-if='item' key='product'>
-        <h1>{{ item.name }}</h1>
-        <a :href='item.githuburl'><i class="fab fa-github-square fa-5x"></i></a>
-        <a :href='item.url'><i class="fas fa-sign-in-alt fa-5x"></i></a>
-        <p class='content'>{{ item.content }}</p>
-        <span v-for=' img in item.photo'>
-            <div>
-                <img :src="img.url" v-if="img.id === item.id " class='b-col-img'/>
-            </div>
-        </span>
+        <h1 class='title'>{{ item.name }}</h1>
+        <a :href='item.githuburl' target="_blank"><i class="fab fa-github-square fa-5x"></i></a>
+        <a :href='item.url' target="_blank"><i class="fas fa-sign-in-alt fa-5x"></i></a>
+          <swiper :options="swiperOption"> 
+                <swiper-slide v-for='img in item.photo' v-if="img.id === item.id">
+                    <img :src="img.url" v-if="img.id === item.id" class='b-col-img'/>
+                </swiper-slide>
+                <div class="swiper-pagination" slot="pagination"></div>
+                <div class="swiper-button-prev" slot="button-prev"></div>
+                <div class="swiper-button-next" slot="button-next"></div>
+          </swiper>
+        <p class='content' style='padding-top:100px;'>{{ item.content }}</p>
     <Footer />
     </div>
     <div v-else key='loading'>Loading...</div>
@@ -25,7 +28,17 @@ export default {
     props: { id: Number },
     data() {
         return {
-            item : null
+            item : null,
+        swiperOption: {
+          pagination: {
+            el: '.swiper-pagination',
+            type: 'progressbar'
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev'
+          }
+        }
         }
     },
     computed: mapGetters('product', ['detail']),
