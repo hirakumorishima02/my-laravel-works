@@ -35,11 +35,11 @@ img{
 
 .title{
 color: rgba(0,0,0,0);
-   background-image: url(/static/images/home/bg-image3_2.jpg);
+   background-image: url(https://img.gifmagazine.net/gifmagazine/images/2853543/original.gif);
    -webkit-background-clip: text;
 }
 
-nav{
+.header{
     background-image: url(/static/images/home/bg-image3_1.jpg);
 }
 
